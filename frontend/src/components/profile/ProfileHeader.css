@@ -1,0 +1,71 @@
+.profile-header-comp {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.profile-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.breadcrumb-root {
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.breadcrumb-root:hover {
+  color: #ffffff;
+}
+
+.breadcrumb-separator {
+  color: rgba(255, 255, 255, 0.15);
+}
+
+.breadcrumb-current {
+  color: #ffffff;
+}
+
+/* Sub tabs list */
+.profile-sub-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.sub-nav-btn {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 0;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.sub-nav-btn:hover {
+  color: #ffffff;
+}
+
+.sub-nav-btn.active {
+  color: #ffffff;
+}
+
+.sub-nav-btn.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 9999px;
+}

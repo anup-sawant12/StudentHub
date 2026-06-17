@@ -1,3 +1,5 @@
+import { profileService } from "./profileService";
+
 const STORAGE_KEY = "studenthub_confessions";
 
 const DEFAULT_CONFESSIONS = [
@@ -119,6 +121,11 @@ export const confessionService = {
     };
     confessions.unshift(newConfession);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(confessions));
+    
+    // Track contribution in profile
+    profileService.trackMyConfession(newConfession.id);
+    profileService.logActivity(`Posted an anonymous confession under "${category}".`, "confession");
+    
     return newConfession;
   },
 

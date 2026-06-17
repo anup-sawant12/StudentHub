@@ -1,3 +1,5 @@
+import { profileService } from "./profileService";
+
 const STORAGE_KEY = "studenthub_lost_found";
 
 const DEFAULT_ITEMS = [
@@ -112,6 +114,10 @@ export const lostFoundService = {
     };
     items.unshift(newItem);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+    
+    // Log activity to profile
+    profileService.logActivity(`Reported a ${newItem.status} item: "${newItem.title}".`, "lost-found");
+    
     return newItem;
   }
 };

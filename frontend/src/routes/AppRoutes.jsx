@@ -6,6 +6,10 @@ import LostFoundDetails from "../pages/lost-found/LostFoundDetails";
 import ConfessionFeedPage from "../pages/confessions/ConfessionFeedPage";
 import CreateConfessionPage from "../pages/confessions/CreateConfessionPage";
 import ConfessionDetailsPage from "../pages/confessions/ConfessionDetailsPage";
+import ProfilePage from "../pages/profile/ProfilePage";
+import EditProfilePage from "../pages/profile/EditProfilePage";
+import MyPostsPage from "../pages/profile/MyPostsPage";
+import SettingsPage from "../pages/profile/SettingsPage";
 import { useNavigation } from "../context/NavigationContext";
 
 export default function AppRoutes() {
@@ -31,6 +35,16 @@ export default function AppRoutes() {
           return <ConfessionDetailsPage />;
         }
         return <ConfessionFeedPage />;
+      case "Profile":
+        if (subView === "edit") {
+          return <EditProfilePage />;
+        }
+        if (subView === "posts") {
+          return <MyPostsPage />;
+        }
+        return <ProfilePage />;
+      case "Settings":
+        return <SettingsPage />;
       default:
         return (
           <div className="under-construction" style={{ padding: "64px 32px", textAlign: "center" }}>
@@ -47,3 +61,4 @@ export default function AppRoutes() {
 
   return <DashboardLayout>{renderContent()}</DashboardLayout>;
 }
+

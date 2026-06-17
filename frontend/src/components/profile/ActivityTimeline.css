@@ -1,0 +1,110 @@
+.activity-timeline-comp {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-sizing: border-box;
+}
+
+.timeline-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.2px;
+}
+
+.timeline-empty {
+  text-align: center;
+  padding: 32px 16px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 16px;
+  position: relative;
+  padding-bottom: 24px;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+/* Vertical line connecting indicators */
+.timeline-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: 14px;
+  width: 1px;
+  height: calc(100% - 20px);
+  background-color: var(--border);
+}
+
+.timeline-indicator {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  z-index: 1;
+}
+
+/* Color schemes for indicator types */
+.timeline-indicator.system {
+  background-color: rgba(59, 130, 246, 0.1); /* blue */
+  color: #60a5fa;
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+.timeline-indicator.profile {
+  background-color: rgba(16, 185, 129, 0.1); /* emerald */
+  color: #34d399;
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.timeline-indicator.post {
+  background-color: rgba(139, 92, 246, 0.1); /* purple */
+  color: #a78bfa;
+  border-color: rgba(139, 92, 246, 0.2);
+}
+
+.timeline-indicator.general {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--muted);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.timeline-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 4px;
+  min-width: 0;
+}
+
+.timeline-text {
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.timeline-time {
+  font-size: 11px;
+  color: var(--muted);
+}

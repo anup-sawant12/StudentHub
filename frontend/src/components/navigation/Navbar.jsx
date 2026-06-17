@@ -1,8 +1,23 @@
+import { useState, useEffect } from "react";
 import { useNavigation } from "../../context/NavigationContext";
+import { profileService } from "../../services/profileService";
 import "./Navbar.css";
 
 function Navbar() {
-  const { searchQuery, setSearchQuery } = useNavigation();
+  const { searchQuery, setSearchQuery, setActiveTab } = useNavigation();
+  const [profile, setProfile] = useState(null);
+
+  useEffect(() => {
+    const loadProfile = () => {
+      const p = profileService.getProfile();
+      setProfile(p);
+    };
+    loadProfile();
+    window.addEventListener("profile-updated", loadProfile);
+    return () => {
+      window.removeEventListener("profile-updated", loadProfile);
+    };
+  }, []);
 
   return (
     <header className="navbar-header">
@@ -45,15 +60,18 @@ function Navbar() {
 
         <div className="navbar-divider"></div>
 
-        <div className="navbar-profile">
+        <div className="navbar-profile" onClick={() => setActiveTab("Profile")}>
           <div className="navbar-profile-info">
-            <div className="navbar-profile-name">Anup Sawant</div>
-            <div className="navbar-profile-subtitle">Computer Science '28</div>
+            <div className="navbar-profile-name">{profile ? profile.name : "Student"}</div>
+            <div className="navbar-profile-subtitle">{profile ? profile.year : "Sophomore"}</div>
           </div>
           <img
-            src="https://img.magnific.com/free-photo/young-handsome-man-wearing-casual-tshirt-blue-background-happy-face-smiling-with-crossed-arms-looking-camera-positive-person_839833-12963.jpg?semt=ais_hybrid&w=740&q=80"
-            alt="Alex Rivers"
+            src={profile ? profile.avatar : "https://img.magnific.com/free-photo/young-handsome-man-wearing-casual-tshirt-blue-background-happy-face-smiling-with-crossed-arms-looking-camera-positive-person_839833-12963.jpg?semt=ais_hybrid&w=740&q=80"}
+            alt="Profile Avatar"
             className="navbar-profile-avatar"
+            onError={(e) => {
+              e.target.src = "https://img.magnific.com/free-photo/young-handsome-man-wearing-casual-tshirt-blue-background-happy-face-smiling-with-crossed-arms-looking-camera-positive-person_839833-12963.jpg?semt=ais_hybrid&w=740&q=80";
+            }}
           />
         </div>
       </div>
@@ -62,4 +80,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Navbar;
