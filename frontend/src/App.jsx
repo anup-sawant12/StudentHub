@@ -1,11 +1,11 @@
-import DashboardLayout from "./layouts/DashboardLayout";
-import Dashboard from "./features/dashboard/pages/Dashboard";
+import { NavigationProvider } from "./context/NavigationContext";
+import AppRoutes from "./routes/AppRoutes";
 
 function App() {
   return (
-    <DashboardLayout>
-      <Dashboard />
-    </DashboardLayout>
+    <NavigationProvider>
+      <AppRoutes />
+    </NavigationProvider>
   );
 }
 

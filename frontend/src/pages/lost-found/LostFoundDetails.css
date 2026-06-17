@@ -1,0 +1,262 @@
+.lost-found-details-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1280px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.details-header {
+  display: flex;
+  align-items: center;
+}
+
+/* Back navigation */
+.btn-back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: color 0.2s, background-color 0.2s, transform 0.2s;
+}
+
+.btn-back:hover {
+  color: #ffffff;
+  background-color: var(--card);
+}
+
+.btn-back:hover .back-arrow-icon {
+  transform: translateX(-3px);
+}
+
+.back-arrow-icon {
+  transition: transform 0.2s;
+}
+
+/* Two-column layout */
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 900px) {
+  .details-grid {
+    grid-template-columns: 1.2fr 1fr;
+  }
+}
+
+.details-image-container {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background-color: var(--card);
+  max-height: 480px;
+}
+
+.details-large-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.details-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.details-badges {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.detail-status-badge {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  padding: 4px 14px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+}
+
+.detail-status-badge.lost {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.detail-status-badge.found {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.detail-category-badge {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 4px 14px;
+  border-radius: 9999px;
+  border: 1px solid var(--border);
+}
+
+.details-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.details-meta {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 500;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 16px;
+}
+
+.details-location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.pin-icon {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.details-description-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.section-subtitle-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.details-description-text {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Contact information panel card */
+.details-contact-card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-sizing: border-box;
+}
+
+.contact-card-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+}
+
+.contact-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.contact-label-name {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.contact-value-name {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.btn-contact-action {
+  width: 100%;
+  border: none;
+  border-radius: 9999px;
+  padding: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-contact-action.lost {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+.btn-contact-action.lost:hover {
+  background-color: #dc2626;
+}
+
+.btn-contact-action.found {
+  background-color: #10b981;
+  color: #ffffff;
+}
+
+.btn-contact-action.found:hover {
+  background-color: #059669;
+}
+
+.btn-contact-action:active {
+  transform: scale(0.98);
+}
+
+/* Error View */
+.details-error-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 40px;
+}
+
+.details-error-message {
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 48px;
+  background-color: var(--card);
+}
+
+.details-error-message h3 {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.details-error-message p {
+  font-size: 14px;
+  color: var(--muted);
+}

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useNavigation } from "../../context/NavigationContext";
 import "./Sidebar.css";
 
 const NAV_ITEMS = [
@@ -88,7 +88,7 @@ const SYSTEM_ITEMS = [
 ];
 
 export default function Sidebar() {
-  const [active, setActive] = useState("Dashboard");
+  const { activeTab, setActiveTab, navigateToCreate } = useNavigation();
 
   return (
     <aside className="sidebar">
@@ -101,11 +101,11 @@ export default function Sidebar() {
       {/* Main Nav */}
       <nav className="sidebar-nav">
         {NAV_ITEMS.map(({ label, icon }) => {
-          const isActive = active === label;
+          const isActive = activeTab === label;
           return (
             <button
               key={label}
-              onClick={() => setActive(label)}
+              onClick={() => setActiveTab(label)}
               className={`sidebar-nav-item ${isActive ? "active" : ""}`}
             >
               <span className="sidebar-nav-icon">{icon}</span>
@@ -118,11 +118,11 @@ export default function Sidebar() {
         <div className="sidebar-section-header">System</div>
 
         {SYSTEM_ITEMS.map(({ label, icon }) => {
-          const isActive = active === label;
+          const isActive = activeTab === label;
           return (
             <button
               key={label}
-              onClick={() => setActive(label)}
+              onClick={() => setActiveTab(label)}
               className={`sidebar-nav-item ${isActive ? "active" : ""}`}
             >
               <span className="sidebar-nav-icon">{icon}</span>
@@ -134,7 +134,13 @@ export default function Sidebar() {
 
       {/* New Post Button */}
       <div className="sidebar-footer">
-        <button className="sidebar-btn-new-post">
+        <button
+          onClick={() => {
+            setActiveTab("Lost & Found");
+            navigateToCreate();
+          }}
+          className="sidebar-btn-new-post"
+        >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <circle cx="12" cy="12" r="10" />
             <line x1="12" y1="8" x2="12" y2="16" />

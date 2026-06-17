@@ -1,6 +1,9 @@
+import { useNavigation } from "../../context/NavigationContext";
 import "./Navbar.css";
 
 function Navbar() {
+  const { searchQuery, setSearchQuery } = useNavigation();
+
   return (
     <header className="navbar-header">
       
@@ -14,7 +17,9 @@ function Navbar() {
         </span>
         <input
           type="text"
-          placeholder="Search experiences, lost items..."
+          placeholder="Search items..."
+          value={searchQuery || ""}
+          onChange={(e) => setSearchQuery(e.target.value)}
           className="navbar-search-input"
         />
       </div>
