@@ -1,0 +1,159 @@
+CREATE DATABASE studenthub;
+USE studenthub;
+
+-- USERS
+
+CREATE TABLE users (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    full_name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    phone VARCHAR(15),
+    branch VARCHAR(50),
+    year_of_study INT,
+    profile_image VARCHAR(255),
+    bio TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+---------------------------------------------------
+
+-- LOST & FOUND
+
+CREATE TABLE lost_found_posts (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    user_id BIGINT,
+    item_type ENUM('LOST','FOUND'),
+    title VARCHAR(200),
+    description TEXT,
+    image_url VARCHAR(255),
+    location VARCHAR(200),
+    status ENUM('OPEN','RESOLVED') DEFAULT 'OPEN',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY(user_id)
+    REFERENCES users(id)
+);
+
+---------------------------------------------------
+
+-- CONFESSIONS
+
+CREATE TABLE confessions (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(200),
+    message TEXT NOT NULL,
+    category VARCHAR(50),
+    likes INT DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+---------------------------------------------------
+
+-- CONFESSION COMMENTS
+
+CREATE TABLE confession_comments (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    confession_id BIGINT,
+    comment_text TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY(confession_id)
+    REFERENCES confessions(id)
+    ON DELETE CASCADE
+);
+
+---------------------------------------------------
+
+-- SUBJECTS
+
+CREATE TABLE subjects (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    subject_name VARCHAR(100),
+    subject_code VARCHAR(20)
+);
+
+---------------------------------------------------
+
+-- ATTENDANCE
+
+CREATE TABLE attendance (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    user_id BIGINT,
+    subject_id BIGINT,
+    total_lectures INT DEFAULT 0,
+    attended_lectures INT DEFAULT 0,
+
+    FOREIGN KEY(user_id)
+    REFERENCES users(id),
+
+    FOREIGN KEY(subject_id)
+    REFERENCES subjects(id)
+);
+
+---------------------------------------------------
+
+-- PLACEMENT EXPERIENCES
+
+CREATE TABLE placement_experiences (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    user_id BIGINT,
+    company_name VARCHAR(100),
+    role_name VARCHAR(100),
+    experience_text TEXT,
+    interview_rounds TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY(user_id)
+    REFERENCES users(id)
+);
+
+---------------------------------------------------
+
+-- ROOMMATE POSTS
+
+CREATE TABLE roommate_posts (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    user_id BIGINT,
+    gender VARCHAR(20),
+    budget DECIMAL(10,2),
+    preferred_location VARCHAR(200),
+    about_me TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY(user_id)
+    REFERENCES users(id)
+);
+
+---------------------------------------------------
+
+-- ROOMMATE INTERESTS
+
+CREATE TABLE roommate_interests (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    roommate_post_id BIGINT,
+    interest VARCHAR(100),
+
+    FOREIGN KEY(roommate_post_id)
+    REFERENCES roommate_posts(id)
+    ON DELETE CASCADE
+);
+
+---------------------------------------------------
+
+-- NOTIFICATIONS
+
+CREATE TABLE notifications (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    user_id BIGINT,
+    title VARCHAR(200),
+    message TEXT,
+    is_read BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY(user_id)
+    REFERENCES users(id)
+);
+
+
+
