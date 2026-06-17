@@ -1,0 +1,140 @@
+.conf-form-comp {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.conf-form-header {
+  margin-bottom: 24px;
+}
+
+.conf-form-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 6px 0;
+}
+
+.conf-form-subtitle {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.conf-form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.conf-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.conf-form-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.conf-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.conf-char-counter {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.conf-char-counter.warning {
+  color: #fbbf24;
+  font-weight: 700;
+}
+
+.conf-select-input,
+.conf-textarea-input {
+  background-color: #0c0c0e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 13px;
+  outline: none;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.conf-select-input:focus,
+.conf-textarea-input:focus {
+  border-color: rgba(255, 255, 255, 0.25);
+  background-color: var(--card-hover);
+}
+
+.conf-textarea-input {
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.conf-textarea-input.error {
+  border-color: #f87171;
+}
+
+.conf-error-text {
+  font-size: 11px;
+  color: #f87171;
+  font-weight: 500;
+}
+
+/* Actions styling */
+.conf-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.conf-btn-submit {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 9999px;
+  padding: 10px 24px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.conf-btn-submit:hover {
+  background-color: #e4e4e7;
+}
+
+.conf-btn-cancel {
+  background-color: #0c0c0e;
+  color: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  padding: 10px 24px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.conf-btn-cancel:hover {
+  background-color: var(--card-hover);
+  border-color: rgba(255, 255, 255, 0.2);
+}

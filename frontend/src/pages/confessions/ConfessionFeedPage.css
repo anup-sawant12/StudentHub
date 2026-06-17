@@ -1,0 +1,110 @@
+.conf-feed-page {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 1280px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.conf-feed-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+@media (min-width: 640px) {
+  .conf-feed-header {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.conf-header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.conf-page-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.75px;
+}
+
+.conf-page-subtitle {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Button style */
+.conf-btn-share {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 9999px;
+  padding: 12px 24px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+  transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  flex-shrink: 0;
+}
+
+.conf-btn-share:hover {
+  background-color: #e4e4e7;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+.conf-btn-share:active {
+  transform: translateY(1px);
+}
+
+.lock-plus-icon {
+  stroke-width: 2.5px;
+}
+
+/* Grid splits */
+.conf-feed-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 900px) {
+  .conf-feed-layout {
+    grid-template-columns: 2.2fr 1fr;
+    gap: 32px;
+  }
+}
+
+.conf-feed-main-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.conf-feed-side-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.conf-filters-wrapper {
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.conf-feed-timeline {
+  width: 100%;
+}

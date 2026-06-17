@@ -1,0 +1,122 @@
+.confession-card-comp {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+.confession-card-comp:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.card-comp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comp-category-badge {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.25px;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  text-transform: capitalize;
+}
+
+.comp-card-time {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.comp-confession-text {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin: 0;
+  font-style: italic;
+  word-break: break-word;
+}
+
+.comp-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  padding-top: 12px;
+}
+
+.comp-footer-stat-btn {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.comp-footer-stat-btn:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+}
+
+/* Likes / Heart state colors */
+.comp-footer-stat-btn.heart:hover {
+  color: #f472b6;
+  background-color: rgba(244, 114, 182, 0.08);
+}
+
+.comp-footer-stat-btn.heart.active {
+  color: #f472b6;
+}
+
+.comp-footer-stat-btn.heart.active:hover {
+  background-color: rgba(244, 114, 182, 0.05);
+}
+
+.comp-footer-stat-btn.heart.active .heart-icon {
+  animation: heartBeat 0.3s ease-in-out;
+}
+
+/* Message state hover */
+.comp-footer-stat-btn.message:hover {
+  color: #60a5fa;
+  background-color: rgba(96, 165, 250, 0.08);
+}
+
+/* Share state hover */
+.comp-footer-stat-btn.share:hover {
+  color: #2dd4bf;
+  background-color: rgba(45, 212, 191, 0.08);
+}
+
+.copied-text {
+  color: #2dd4bf;
+  font-weight: 700;
+  font-size: 11px;
+}
+
+@keyframes heartBeat {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}

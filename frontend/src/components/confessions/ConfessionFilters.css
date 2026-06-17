@@ -1,0 +1,90 @@
+.conf-filters-box {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .conf-filters-box {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.conf-pills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.conf-pill-btn {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.conf-pill-btn:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  background-color: var(--card-hover);
+}
+
+.conf-pill-btn.active {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+/* Sorting input select */
+.conf-sort-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+@media (max-width: 767px) {
+  .conf-sort-wrapper {
+    margin-left: 0;
+  }
+}
+
+.conf-sort-label {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.conf-sort-select {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  color: #ffffff;
+  padding: 6px 28px 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  transition: border-color 0.2s;
+}
+
+.conf-sort-select:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.conf-sort-select:focus {
+  border-color: #ffffff;
+}

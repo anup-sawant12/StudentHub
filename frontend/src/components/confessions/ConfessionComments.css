@@ -1,0 +1,129 @@
+.conf-comments-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.comments-heading {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Comment input form */
+.comment-form-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.comment-textarea {
+  width: 100%;
+  background-color: #0c0c0e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 13px;
+  line-height: 1.5;
+  outline: none;
+  font-family: inherit;
+  box-sizing: border-box;
+  resize: vertical;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.comment-textarea:focus {
+  border-color: rgba(255, 255, 255, 0.25);
+  background-color: var(--card-hover);
+}
+
+.comment-textarea.error {
+  border-color: #f87171;
+}
+
+.comment-error-msg {
+  font-size: 11px;
+  color: #f87171;
+  font-weight: 500;
+}
+
+.comment-form-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.comment-btn-submit {
+  background-color: var(--card);
+  color: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  padding: 8px 18px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.comment-btn-submit:hover {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+/* Comments bubbles list */
+.comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.comment-bubble {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-sizing: border-box;
+}
+
+.comment-bubble-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment-author {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.comment-time {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.comment-text {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+  margin: 0;
+  word-break: break-word;
+}
+
+.no-comments-prompt {
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+  padding: 24px 0;
+  font-style: italic;
+}

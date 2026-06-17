@@ -3,6 +3,9 @@ import Dashboard from "../pages/Dashboard";
 import LostFoundPage from "../pages/lost-found/LostFoundPage";
 import CreatePostPage from "../pages/lost-found/CreatePostPage";
 import LostFoundDetails from "../pages/lost-found/LostFoundDetails";
+import ConfessionFeedPage from "../pages/confessions/ConfessionFeedPage";
+import CreateConfessionPage from "../pages/confessions/CreateConfessionPage";
+import ConfessionDetailsPage from "../pages/confessions/ConfessionDetailsPage";
 import { useNavigation } from "../context/NavigationContext";
 
 export default function AppRoutes() {
@@ -20,6 +23,14 @@ export default function AppRoutes() {
           return <LostFoundDetails />;
         }
         return <LostFoundPage />;
+      case "Anonymous Confessions":
+        if (subView === "create") {
+          return <CreateConfessionPage />;
+        }
+        if (subView === "details") {
+          return <ConfessionDetailsPage />;
+        }
+        return <ConfessionFeedPage />;
       default:
         return (
           <div className="under-construction" style={{ padding: "64px 32px", textAlign: "center" }}>

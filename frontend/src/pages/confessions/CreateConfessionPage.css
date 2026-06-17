@@ -1,0 +1,50 @@
+.create-conf-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1280px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.create-conf-header {
+  display: flex;
+  align-items: center;
+}
+
+/* Back navigation button styling */
+.btn-back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: color 0.2s, background-color 0.2s, transform 0.2s;
+}
+
+.btn-back:hover {
+  color: #ffffff;
+  background-color: var(--card);
+}
+
+.btn-back:active {
+  transform: translateX(-2px);
+}
+
+.back-arrow-icon {
+  transition: transform 0.2s;
+}
+
+.btn-back:hover .back-arrow-icon {
+  transform: translateX(-3px);
+}
+
+.create-conf-content {
+  width: 100%;
+}

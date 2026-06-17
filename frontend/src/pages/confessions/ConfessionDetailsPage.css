@@ -1,0 +1,88 @@
+.conf-details-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 680px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.conf-details-header {
+  display: flex;
+  align-items: center;
+}
+
+/* Back button */
+.btn-back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: color 0.2s, background-color 0.2s, transform 0.2s;
+}
+
+.btn-back:hover {
+  color: #ffffff;
+  background-color: var(--card);
+}
+
+.btn-back:hover .back-arrow-icon {
+  transform: translateX(-3px);
+}
+
+.back-arrow-icon {
+  transition: transform 0.2s;
+}
+
+/* Main detail body */
+.conf-details-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.conf-details-card-wrapper {
+  width: 100%;
+}
+
+.conf-details-comments-wrapper {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+/* Error styles */
+.conf-details-error {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 40px;
+}
+
+.conf-error-box {
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 48px;
+  background-color: var(--card);
+}
+
+.conf-error-box h3 {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.conf-error-box p {
+  font-size: 14px;
+  color: var(--muted);
+}
