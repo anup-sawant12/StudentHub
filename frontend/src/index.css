@@ -1,0 +1,38 @@
+:root{
+  --bg:#000000;
+  --sidebar:#0c0c0e;
+  --card:#121214;
+  --card-hover:#1c1c1e;
+
+  --border:#1f1f23;
+
+  --primary:#ffffff;
+
+  --text:#ffffff;
+  --muted:#a1a1aa;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:Inter,sans-serif;
+}
+
+.glass-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:8px;
+  transition:.3s;
+}
+
+.glass-card:hover{
+  background:var(--card-hover);
+  box-shadow:0 0 20px rgba(139,92,246,.15);
+  transform:translateY(-2px);
+}

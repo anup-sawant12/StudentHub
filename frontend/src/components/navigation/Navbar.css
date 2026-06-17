@@ -1,0 +1,123 @@
+.navbar-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 220px;
+  height: 64px;
+  background-color: var(--bg);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  z-index: 40;
+  box-sizing: border-box;
+}
+
+.navbar-search-container {
+  position: relative;
+  width: 384px;
+}
+
+.navbar-search-icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.4);
+  pointer-events: none;
+}
+
+.navbar-search-input {
+  width: 100%;
+  background-color: #0c0c0e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  padding: 8px 16px 8px 44px;
+  font-size: 14px;
+  color: #ffffff;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.navbar-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.navbar-search-input:focus {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+  position: relative;
+}
+
+.navbar-icon-btn:hover {
+  color: #ffffff;
+}
+
+.navbar-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 6px;
+  height: 6px;
+  background-color: #c084fc;
+  border-radius: 50%;
+}
+
+.navbar-divider {
+  height: 28px;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: 0 4px;
+}
+
+.navbar-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-profile-info {
+  text-align: right;
+}
+
+.navbar-profile-name {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.navbar-profile-subtitle {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 10px;
+  line-height: 1.25;
+}
+
+.navbar-profile-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}

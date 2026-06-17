@@ -1,0 +1,14 @@
+.layout-container {
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.layout-main {
+  margin-left: 220px;
+  padding-top: 88px;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 40px;
+  box-sizing: border-box;
+}
