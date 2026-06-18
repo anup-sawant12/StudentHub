@@ -4,7 +4,7 @@ import TrendingConfessions from "../components/confessions/TrendingConfessions";
 import "./Dashboard.css";
 
 function Dashboard() {
-  const { setActiveTab, navigateToCreate } = useNavigation();
+  const { setActiveTab, navigateToCreate, setSubView } = useNavigation();
 
   return (
     <div className="dashboard-container">
@@ -345,7 +345,7 @@ function Dashboard() {
               </div>
               
               <button className="btn-detailed" onClick={(e) => { e.stopPropagation(); setActiveTab("Attendance Tracker"); }}>
-                Detailed Report
+                Open Tracker
               </button>
             </div>
           </div>

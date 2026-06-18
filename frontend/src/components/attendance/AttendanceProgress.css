@@ -1,0 +1,9 @@
+.attendance-progress-circle-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle-percentage-text {
+  font-family: inherit;
+}

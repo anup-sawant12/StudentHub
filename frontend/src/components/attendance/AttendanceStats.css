@@ -1,0 +1,160 @@
+.attendance-stats-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 1024px) {
+  .attendance-stats-wrapper {
+    grid-template-columns: 3fr 4fr;
+  }
+}
+
+.stats-main-card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.stats-main-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.stats-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.stats-subtitle {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+.stats-percentage {
+  font-size: 44px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.stats-description {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 12px 0 0 0;
+  line-height: 1.5;
+}
+
+/* Mini stat grids */
+.stats-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 16px;
+}
+
+@media (min-width: 580px) {
+  .stats-mini-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.mini-stat-card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.mini-stat-icon-container {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.present-icon-bg { background-color: rgba(16, 185, 129, 0.08); }
+.absent-icon-bg { background-color: rgba(239, 68, 68, 0.08); }
+.total-icon-bg { background-color: rgba(161, 161, 170, 0.08); }
+
+.mini-stat-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.mini-stat-label {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mini-stat-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 4px 0 2px 0;
+  line-height: 1;
+}
+
+.mini-stat-sub {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* Status Badges */
+.stats-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  box-sizing: border-box;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.badge-safe {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+.badge-safe .status-dot { background-color: #34d399; }
+
+.badge-warning {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+.badge-warning .status-dot { background-color: #f59e0b; }
+
+.badge-danger {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+.badge-danger .status-dot { background-color: #ef4444; }

@@ -10,6 +10,8 @@ import ProfilePage from "../pages/profile/ProfilePage";
 import EditProfilePage from "../pages/profile/EditProfilePage";
 import MyPostsPage from "../pages/profile/MyPostsPage";
 import SettingsPage from "../pages/profile/SettingsPage";
+import AttendancePage from "../pages/attendance/AttendancePage";
+import AttendanceDetailsPage from "../pages/attendance/AttendanceDetailsPage";
 import { useNavigation } from "../context/NavigationContext";
 
 export default function AppRoutes() {
@@ -35,6 +37,11 @@ export default function AppRoutes() {
           return <ConfessionDetailsPage />;
         }
         return <ConfessionFeedPage />;
+      case "Attendance Tracker":
+        if (subView === "details") {
+          return <AttendanceDetailsPage />;
+        }
+        return <AttendancePage />;
       case "Profile":
         if (subView === "edit") {
           return <EditProfilePage />;
@@ -61,4 +68,5 @@ export default function AppRoutes() {
 
   return <DashboardLayout>{renderContent()}</DashboardLayout>;
 }
+
 

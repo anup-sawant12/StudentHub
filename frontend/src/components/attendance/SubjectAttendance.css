@@ -1,0 +1,124 @@
+/* Detailed Subject Advice Widget */
+.advice-banner-card {
+  background-color: rgba(255, 255, 255, 0.01);
+  border: 1px solid var(--border);
+  border-left-width: 4px;
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 24px;
+}
+
+.advice-banner-card.border-safe { border-left-color: #34d399; }
+.advice-banner-card.border-warning { border-left-color: #f59e0b; }
+.advice-banner-card.border-danger { border-left-color: #ef4444; }
+
+.advice-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-dot.dot-safe { background-color: #34d399; }
+.status-dot.dot-warning { background-color: #f59e0b; }
+.status-dot.dot-danger { background-color: #ef4444; }
+
+.advice-title-text {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--muted);
+  letter-spacing: 0.5px;
+}
+
+.advice-main-text {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 6px 0;
+}
+
+.advice-sub-text {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Subject Grid Info */
+.subject-details-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+  .subject-details-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.detail-stat-card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stat-card-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.stat-card-numbers {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+
+.stat-card-value {
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.stat-card-value.text-safe { color: #34d399; }
+.stat-card-value.text-danger { color: #ef4444; }
+
+.stat-card-divider {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.2);
+  margin: 0 4px;
+}
+
+.stat-card-total {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.stat-card-sub {
+  font-size: 10px;
+}
+
+.detail-stat-room {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+  line-height: 1.1;
+}
