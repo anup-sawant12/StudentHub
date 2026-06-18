@@ -12,6 +12,8 @@ import MyPostsPage from "../pages/profile/MyPostsPage";
 import SettingsPage from "../pages/profile/SettingsPage";
 import AttendancePage from "../pages/attendance/AttendancePage";
 import AttendanceDetailsPage from "../pages/attendance/AttendanceDetailsPage";
+import PlacementFeedPage from "../pages/placement/PlacementFeedPage";
+import AddExperiencePage from "../pages/placement/AddExperiencePage";
 import { useNavigation } from "../context/NavigationContext";
 
 export default function AppRoutes() {
@@ -42,6 +44,11 @@ export default function AppRoutes() {
           return <AttendanceDetailsPage />;
         }
         return <AttendancePage />;
+      case "Placement Portal":
+        if (subView === "create") {
+          return <AddExperiencePage />;
+        }
+        return <PlacementFeedPage />;
       case "Profile":
         if (subView === "edit") {
           return <EditProfilePage />;

@@ -38,7 +38,7 @@ function Dashboard() {
             </svg>
             Post Confession
           </button>
-          <button className="welcome-btn" onClick={() => setActiveTab("Placement Portal")}>
+          <button className="welcome-btn" onClick={() => { setActiveTab("Placement Portal"); navigateToCreate(); }}>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M12 20h9" />
               <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z" />
@@ -298,7 +298,7 @@ function Dashboard() {
                 <span className="action-btn-label">Attendance</span>
               </button>
 
-              <button className="action-btn" onClick={() => setActiveTab("Placement Portal")}>
+              <button className="action-btn" onClick={() => { setActiveTab("Placement Portal"); navigateToCreate(); }}>
                 <div className="action-btn-icon">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M12 20h9" />
