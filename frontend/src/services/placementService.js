@@ -78,6 +78,7 @@ export const placementService = {
 
   addExperience: (exp) => {
     initStorage();
+    const profile = profileService.getProfile();
     const list = placementService.getExperiences();
     const newExp = {
       ...exp,
@@ -85,7 +86,8 @@ export const placementService = {
       createdAt: "Just now",
       likes: 0,
       likedByUser: false,
-      authorName: exp.authorName.trim() || "Anonymous"
+      authorName: exp.authorName.trim() || "Anonymous",
+      authorEmail: profile ? profile.email : ""
     };
 
     list.unshift(newExp);
@@ -113,6 +115,23 @@ export const placementService = {
       return item;
     }
     return null;
+  },
+
+  deleteExperience: (id) => {
+    initStorage();
+    try {
+      const list = placementService.getExperiences();
+      const expToDelete = list.find((item) => item.id === id);
+      const filtered = list.filter((item) => item.id !== id);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(filtered));
+      if (expToDelete) {
+        profileService.logActivity(`Deleted interview experience at "${expToDelete.companyName}".`, "placement");
+      }
+      return true;
+    } catch (e) {
+      console.error("Error deleting experience", e);
+      return false;
+    }
   }
 };
 

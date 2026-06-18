@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
 import { useNavigation } from "../../context/NavigationContext";
 import { lostFoundService } from "../../services/lostFoundService";
+import { profileService } from "../../services/profileService";
 import "./LostFoundDetails.css";
 
 export default function LostFoundDetails() {
   const { selectedItemId, navigateToList } = useNavigation();
   const [item, setItem] = useState(null);
   const [actionSent, setActionSent] = useState(false);
+
+  const profile = profileService.getProfile();
+  const isOwner = item && profile && item.contactEmail && item.contactEmail.toLowerCase().trim() === profile.email.toLowerCase().trim();
 
   useEffect(() => {
     if (selectedItemId) {
@@ -23,6 +27,17 @@ export default function LostFoundDetails() {
         `Your request has been sent to ${item.contactName}. They will receive an email notification at ${item.contactEmail}.`
       );
     }, 100);
+  };
+
+  const handleDelete = () => {
+    if (window.confirm("Are you sure you want to delete this listing?")) {
+      const success = lostFoundService.deleteItem(item.id);
+      if (success) {
+        navigateToList();
+      } else {
+        alert("Failed to delete the listing.");
+      }
+    }
   };
 
   if (!item) {
@@ -107,13 +122,22 @@ export default function LostFoundDetails() {
               <span className="contact-value-name">{item.contactEmail}</span>
             </div>
 
-            <button
-              onClick={handleAction}
-              disabled={actionSent}
-              className={`btn-contact-action ${item.status}`}
-            >
-              {item.status === "lost" ? "I Found This Item" : "Claim This Item"}
-            </button>
+            {isOwner ? (
+              <button
+                onClick={handleDelete}
+                className="btn-delete-action"
+              >
+                Delete Listing
+              </button>
+            ) : (
+              <button
+                onClick={handleAction}
+                disabled={actionSent}
+                className={`btn-contact-action ${item.status}`}
+              >
+                {item.status === "lost" ? "I Found This Item" : "Claim This Item"}
+              </button>
+            )}
           </div>
         </div>
       </div>

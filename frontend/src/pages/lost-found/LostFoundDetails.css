@@ -260,3 +260,28 @@
   font-size: 14px;
   color: var(--muted);
 }
+
+/* Delete button styling */
+.btn-delete-action {
+  width: 100%;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 9999px;
+  padding: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 8px;
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.btn-delete-action:hover {
+  background-color: #ef4444;
+  color: #ffffff;
+  border-color: #ef4444;
+}
+
+.btn-delete-action:active {
+  transform: scale(0.98);
+}

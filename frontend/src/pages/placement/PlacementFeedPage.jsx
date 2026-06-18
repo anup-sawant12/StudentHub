@@ -23,6 +23,17 @@ export function PlacementFeedPage() {
     }
   };
 
+  const handleDelete = (id) => {
+    if (window.confirm("Are you sure you want to delete this experience post?")) {
+      const success = placementService.deleteExperience(id);
+      if (success) {
+        setExperiences((prev) => prev.filter((item) => item.id !== id));
+      } else {
+        alert("Failed to delete experience post.");
+      }
+    }
+  };
+
   return (
     <div className="placement-feed-page">
       {/* Header Panel */}
@@ -43,7 +54,7 @@ export function PlacementFeedPage() {
       </div>
 
       {/* Main List Feed */}
-      <ExperienceFeed experiences={experiences} onLike={handleLike} />
+      <ExperienceFeed experiences={experiences} onLike={handleLike} onDelete={handleDelete} />
     </div>
   );
 }

@@ -119,5 +119,22 @@ export const lostFoundService = {
     profileService.logActivity(`Reported a ${newItem.status} item: "${newItem.title}".`, "lost-found");
     
     return newItem;
+  },
+
+  deleteItem: (id) => {
+    initStorage();
+    try {
+      const items = lostFoundService.getItems();
+      const itemToDelete = items.find((item) => item.id === id);
+      const filtered = items.filter((item) => item.id !== id);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(filtered));
+      if (itemToDelete) {
+        profileService.logActivity(`Deleted the ${itemToDelete.status} item listing: "${itemToDelete.title}".`, "lost-found");
+      }
+      return true;
+    } catch (e) {
+      console.error("Error deleting lost & found item", e);
+      return false;
+    }
   }
 };

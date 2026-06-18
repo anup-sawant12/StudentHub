@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ExperienceCard from "./ExperienceCard";
 import "./ExperienceFeed.css";
 
-export function ExperienceFeed({ experiences, onLike }) {
+export function ExperienceFeed({ experiences, onLike, onDelete }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCompany, setSelectedCompany] = useState("all");
   const [selectedType, setSelectedType] = useState("all");
@@ -105,7 +105,7 @@ export function ExperienceFeed({ experiences, onLike }) {
       ) : (
         <div className="feed-cards-grid">
           {filteredExperiences.map((exp) => (
-            <ExperienceCard key={exp.id} experience={exp} onLike={onLike} />
+            <ExperienceCard key={exp.id} experience={exp} onLike={onLike} onDelete={onDelete} />
           ))}
         </div>
       )}
