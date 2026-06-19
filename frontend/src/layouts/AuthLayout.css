@@ -1,0 +1,352 @@
+.auth-layout-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg);
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+}
+
+/* Background Glow Balls */
+.glow-ball {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.15;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.blue-glow {
+  width: 400px;
+  height: 400px;
+  background-color: #3b82f6;
+  top: -100px;
+  left: -100px;
+}
+
+.purple-glow {
+  width: 450px;
+  height: 450px;
+  background-color: #8b5cf6;
+  bottom: -150px;
+  right: -150px;
+}
+
+/* Main Box */
+.auth-layout-card {
+  width: 1000px;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+
+.auth-layout-card:hover {
+  transform: none; /* overrides standard glass-card transform */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Left Brand Panel */
+.auth-brand-section {
+  background-color: rgba(255, 255, 255, 0.01);
+  border-right: 1px solid var(--border);
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.brand-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-logo-txt {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+}
+
+.brand-badge {
+  font-size: 10px;
+  font-weight: 700;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--muted);
+  padding: 2px 8px;
+  border-radius: 9999px;
+  letter-spacing: 0.5px;
+}
+
+.brand-welcome-pitch {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pitch-heading {
+  font-size: 28px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+
+.pitch-desc {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0 0 12px 0;
+}
+
+.pitch-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feature-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.feature-icon {
+  font-size: 18px;
+  width: 36px;
+  height: 36px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.feature-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.feature-info strong {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.feature-info span {
+  font-size: 11.5px;
+  color: var(--muted);
+}
+
+.brand-footer {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.35);
+  font-weight: 500;
+}
+
+/* Right Form Section */
+.auth-form-section {
+  padding: 48px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.auth-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.auth-header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.auth-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.auth-subtitle {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* Forms CSS matching LostFound form */
+.auth-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.auth-form .label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.auth-form label {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.auth-form input {
+  background-color: #0c0c0e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  outline: none;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.auth-form input:focus {
+  border-color: rgba(255, 255, 255, 0.25);
+  background-color: var(--card-hover);
+}
+
+.auth-form input.error {
+  border-color: #ef4444;
+}
+
+.error-text {
+  font-size: 10px;
+  color: #ef4444;
+  font-weight: 500;
+}
+
+.auth-error-banner {
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.auth-success-banner {
+  background-color: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Link Actions */
+.auth-link-inline, .auth-link {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s;
+  font-family: inherit;
+}
+
+.auth-link-inline:hover {
+  color: #ffffff;
+}
+
+.auth-link {
+  color: #ffffff;
+  text-decoration: underline;
+  margin-left: 6px;
+}
+
+.auth-link:hover {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.auth-footer-prompt {
+  font-size: 12.5px;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 10px;
+}
+
+.btn-auth-submit {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 9999px;
+  padding: 10px 24px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+}
+
+.btn-auth-submit:hover {
+  background-color: #e4e4e7;
+  transform: translateY(-1px);
+}
+
+.btn-auth-submit:active {
+  transform: translateY(0);
+}
+
+/* Spinner */
+.auth-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-top-color: #000000;
+  border-radius: 50%;
+  animation: authSpin 0.8s linear infinite;
+}
+
+@keyframes authSpin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 900px) {
+  .auth-layout-card {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+  .auth-brand-section {
+    display: none; /* Hide on mobile/tablet to look clean */
+  }
+  .auth-form-section {
+    padding: 36px;
+  }
+}

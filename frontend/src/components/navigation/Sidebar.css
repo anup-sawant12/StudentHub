@@ -79,7 +79,8 @@
 }
 
 .sidebar-section-header {
-  margin-top: 240px;
+  margin-top: 160px;
+  margin-bottom: 0px;
   padding: 20px 12px 4px 12px;
   font-size: 10px;
   text-transform: uppercase;
@@ -89,6 +90,20 @@
 }
 
 .sidebar-footer {
+  margin-top: 0px;
   padding: 16px;
+}
+
+.sidebar-logout-btn {
+  color: rgba(239, 68, 68, 0.65) !important;
+}
+
+.sidebar-logout-btn:hover {
+  background-color: rgba(239, 68, 68, 0.08) !important;
+  color: #f87171 !important;
+}
+
+.sidebar-logout-btn:hover .sidebar-nav-icon {
+  color: #f87171 !important;
 }
 

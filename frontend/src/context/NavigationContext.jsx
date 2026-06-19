@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import { authService } from "../services/authService";
 
 const NavigationContext = createContext(null);
 
@@ -7,6 +8,11 @@ export function NavigationProvider({ children }) {
   const [subView, setSubView] = useState(null); // null (list), 'create', 'details'
   const [selectedItemId, setSelectedItemId] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
+
+  // Auth States
+  const [user, setUser] = useState(() => authService.getCurrentUser());
+  const [authView, setAuthView] = useState("login"); // "login", "register", "forgot-password", "verify-email"
+  const [emailToVerify, setEmailToVerify] = useState("");
 
   const setActiveTab = (tab) => {
     setActiveTabState(tab);
@@ -29,6 +35,18 @@ export function NavigationProvider({ children }) {
     setSelectedItemId(null);
   };
 
+  const login = (email, password) => {
+    const loggedInUser = authService.login(email, password);
+    setUser(loggedInUser);
+    setActiveTab("Dashboard");
+  };
+
+  const logout = () => {
+    authService.logout();
+    setUser(null);
+    setAuthView("login");
+  };
+
   return (
     <NavigationContext.Provider
       value={{
@@ -43,6 +61,16 @@ export function NavigationProvider({ children }) {
         navigateToList,
         searchQuery,
         setSearchQuery,
+        
+        // Auth context values
+        user,
+        setUser,
+        authView,
+        setAuthView,
+        emailToVerify,
+        setEmailToVerify,
+        login,
+        logout
       }}
     >
       {children}

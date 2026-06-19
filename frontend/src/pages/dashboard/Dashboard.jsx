@@ -1,6 +1,6 @@
-import { useNavigation } from "../context/NavigationContext";
-import RecentLostFound from "../components/dashboard/RecentLostFound";
-import TrendingConfessions from "../components/confessions/TrendingConfessions";
+import { useNavigation } from "../../context/NavigationContext";
+import RecentLostFound from "../../components/dashboard/RecentLostFound";
+import TrendingConfessions from "../../components/confessions/TrendingConfessions";
 import "./Dashboard.css";
 
 function Dashboard() {

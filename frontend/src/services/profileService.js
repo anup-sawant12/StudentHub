@@ -2,6 +2,7 @@ import { INITIAL_PROFILE } from "../data/profileData";
 import { lostFoundService } from "./lostFoundService";
 import { confessionService } from "./confessionService";
 import { roommateService } from "./roommateService";
+import { authService } from "./authService";
 
 const PROFILE_KEY = "studenthub_profile";
 const ACTIVITIES_KEY = "studenthub_activities";
@@ -29,7 +30,9 @@ export const profileService = {
   getProfile: () => {
     initStorage();
     try {
-      return JSON.parse(localStorage.getItem(PROFILE_KEY));
+      const authUser = authService.getCurrentUser();
+      if (authUser) return authUser;
+      return JSON.parse(localStorage.getItem(PROFILE_KEY)) || INITIAL_PROFILE;
     } catch (e) {
       console.error("Error reading profile", e);
       return INITIAL_PROFILE;
@@ -38,7 +41,7 @@ export const profileService = {
 
   updateProfile: (updatedProfile) => {
     initStorage();
-    localStorage.setItem(PROFILE_KEY, JSON.stringify(updatedProfile));
+    authService.updateSessionProfile(updatedProfile);
     profileService.logActivity("Updated profile details.", "profile");
     return updatedProfile;
   },

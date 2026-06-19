@@ -1,5 +1,5 @@
 import DashboardLayout from "../layouts/DashboardLayout";
-import Dashboard from "../pages/Dashboard";
+import Dashboard from "../pages/dashboard/Dashboard";
 import LostFoundPage from "../pages/lost-found/LostFoundPage";
 import CreatePostPage from "../pages/lost-found/CreatePostPage";
 import LostFoundDetails from "../pages/lost-found/LostFoundDetails";
@@ -15,10 +15,30 @@ import AttendanceDetailsPage from "../pages/attendance/AttendanceDetailsPage";
 import PlacementFeedPage from "../pages/placement/PlacementFeedPage";
 import AddExperiencePage from "../pages/placement/AddExperiencePage";
 import RoommatePage from "../pages/roommate/RoommatePage";
+import LoginPage from "../pages/auth/LoginPage";
+import RegisterPage from "../pages/auth/RegisterPage";
+import ForgotPasswordPage from "../pages/auth/ForgotPasswordPage";
+import VerifyEmailPage from "../pages/auth/VerifyEmailPage";
 import { useNavigation } from "../context/NavigationContext";
 
 export default function AppRoutes() {
-  const { activeTab, subView } = useNavigation();
+  const { activeTab, subView, user, authView } = useNavigation();
+
+  // Redirect to Auth Views if not logged in
+  if (!user) {
+    switch (authView) {
+      case "login":
+        return <LoginPage />;
+      case "register":
+        return <RegisterPage />;
+      case "forgot-password":
+        return <ForgotPasswordPage />;
+      case "verify-email":
+        return <VerifyEmailPage />;
+      default:
+        return <LoginPage />;
+    }
+  }
 
   const renderContent = () => {
     switch (activeTab) {
