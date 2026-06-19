@@ -14,6 +14,7 @@ import AttendancePage from "../pages/attendance/AttendancePage";
 import AttendanceDetailsPage from "../pages/attendance/AttendanceDetailsPage";
 import PlacementFeedPage from "../pages/placement/PlacementFeedPage";
 import AddExperiencePage from "../pages/placement/AddExperiencePage";
+import RoommatePage from "../pages/roommate/RoommatePage";
 import { useNavigation } from "../context/NavigationContext";
 
 export default function AppRoutes() {
@@ -59,6 +60,8 @@ export default function AppRoutes() {
         return <ProfilePage />;
       case "Settings":
         return <SettingsPage />;
+      case "Roommate Finder":
+        return <RoommatePage />;
       default:
         return (
           <div className="under-construction" style={{ padding: "64px 32px", textAlign: "center" }}>

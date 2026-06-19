@@ -1,6 +1,7 @@
 import { INITIAL_PROFILE } from "../data/profileData";
 import { lostFoundService } from "./lostFoundService";
 import { confessionService } from "./confessionService";
+import { roommateService } from "./roommateService";
 
 const PROFILE_KEY = "studenthub_profile";
 const ACTIVITIES_KEY = "studenthub_activities";
@@ -80,16 +81,13 @@ export const profileService = {
   },
 
   getMyRoommatePosts: () => {
-    // Return empty mock roommate posts initially
-    return [
-      {
-        id: "rm-mock-1",
-        title: "Looking for a flatmate in PG Outer",
-        rent: "₹10,000/month",
-        location: "PG Outer Area",
-        time: "1 week ago"
-      }
-    ];
+    const profile = profileService.getProfile();
+    const allRoommates = roommateService.getPosts();
+    return allRoommates.filter(
+      (post) =>
+        post.email &&
+        post.email.toLowerCase().trim() === profile.email.toLowerCase().trim()
+    );
   },
 
   getActivityTimeline: () => {

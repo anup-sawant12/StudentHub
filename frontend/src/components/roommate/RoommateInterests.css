@@ -1,0 +1,122 @@
+.interests-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.interests-container.selectable {
+  gap: 8px;
+}
+
+.interest-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.no-interests {
+  font-size: 12px;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* Tag Color Systems matching Dark Glassmorphism */
+.tag-gaming {
+  background-color: rgba(245, 158, 11, 0.08); /* Amber */
+  color: #fbbf24;
+  border-color: rgba(245, 158, 11, 0.2);
+}
+
+.tag-quiet {
+  background-color: rgba(16, 185, 129, 0.08); /* Emerald */
+  color: #34d399;
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.tag-coding {
+  background-color: rgba(59, 130, 246, 0.08); /* Blue */
+  color: #60a5fa;
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+.tag-latenight {
+  background-color: rgba(139, 92, 246, 0.08); /* Purple */
+  color: #a78bfa;
+  border-color: rgba(139, 92, 246, 0.2);
+}
+
+.tag-earlybird {
+  background-color: rgba(236, 72, 153, 0.08); /* Pink */
+  color: #f472b6;
+  border-color: rgba(236, 72, 153, 0.2);
+}
+
+.tag-vegetarian {
+  background-color: rgba(34, 197, 94, 0.08); /* Green */
+  color: #4ade80;
+  border-color: rgba(34, 197, 94, 0.2);
+}
+
+.tag-gym {
+  background-color: rgba(239, 68, 68, 0.08); /* Red */
+  color: #f87171;
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+.tag-nonsmoker {
+  background-color: rgba(20, 184, 166, 0.08); /* Teal */
+  color: #2dd4bf;
+  border-color: rgba(20, 184, 166, 0.2);
+}
+
+.tag-reading {
+  background-color: rgba(100, 116, 139, 0.08); /* Slate */
+  color: #cbd5e1;
+  border-color: rgba(100, 116, 139, 0.2);
+}
+
+.tag-music {
+  background-color: rgba(217, 70, 239, 0.08); /* Fuchsia */
+  color: #e879f9;
+  border-color: rgba(217, 70, 239, 0.2);
+}
+
+.tag-default {
+  background-color: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.7);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Selectable styles */
+.interest-badge.selectable-badge {
+  background-color: rgba(255, 255, 255, 0.02);
+  color: var(--muted);
+  border-color: var(--border);
+}
+
+.interest-badge.selectable-badge:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.interest-badge.selectable-badge.selected {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: #ffffff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.select-indicator {
+  font-size: 10px;
+  font-weight: 700;
+  opacity: 0.8;
+}

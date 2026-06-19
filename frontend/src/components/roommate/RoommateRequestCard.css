@@ -1,0 +1,212 @@
+.roommate-request-card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  padding: 16px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 0.2s ease;
+}
+
+.roommate-request-card:hover {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.req-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.req-user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.req-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.req-avatar-placeholder {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.req-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.req-name {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.req-role-label {
+  font-size: 10.5px;
+  color: var(--muted);
+  margin-top: 1px;
+}
+
+.req-status-tag {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 3px 10px;
+  border-radius: 6px;
+}
+
+.tag-pending {
+  background-color: rgba(245, 158, 11, 0.08);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.tag-accepted {
+  background-color: rgba(16, 185, 129, 0.08);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.tag-declined {
+  background-color: rgba(239, 68, 68, 0.08);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.req-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.req-post-reference {
+  display: flex;
+  gap: 6px;
+  align-items: baseline;
+  font-size: 12.5px;
+}
+
+.reference-label {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.reference-title {
+  color: #ffffff;
+  font-style: italic;
+}
+
+.req-message-box {
+  background-color: rgba(255, 255, 255, 0.015);
+  border-left: 2px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 12px;
+  border-radius: 0 6px 6px 0;
+}
+
+.req-message-text {
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.4;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Contact Reveal block */
+.req-contact-reveal {
+  background-color: rgba(16, 185, 129, 0.04);
+  border: 1px dashed rgba(16, 185, 129, 0.25);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-top: 2px;
+}
+
+.contact-reveal-header {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #34d399;
+  margin-bottom: 6px;
+}
+
+.contact-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-field {
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.field-name {
+  color: var(--muted);
+  font-weight: 600;
+  width: 50px;
+}
+
+.field-value {
+  color: #ffffff;
+}
+
+/* Action buttons */
+.req-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+  margin-top: 4px;
+}
+
+.btn-decline-req {
+  background: none;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-decline-req:hover {
+  background-color: rgba(239, 68, 68, 0.05);
+}
+
+.btn-accept-req {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-accept-req:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-1px);
+}
