@@ -16,4 +16,4 @@ Run the following command to start the application:
 npm run dev
 ```
 
-After running the command, open the URL shown in the terminal (usually `http://localhost:5173`) in your browser.
+
